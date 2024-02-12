@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
-import type { Product } from '@/types/Product' // "type" を使ってインポート
+import type { Product } from '@/types/Product' // "type" を使ってインポートしないとタイプスクリプトは動かないらしい
 
 export const useCartStore = defineStore({
   id: 'cart',
   state: () => ({
-    items: [] as Product[] // 商品の型を Product[] に設定
+    items: [] as Product[]
   }),
   actions: {
     addToCart(product: Product) {

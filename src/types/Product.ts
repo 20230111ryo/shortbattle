@@ -1,4 +1,4 @@
-// src/types/Product.ts
+// データの型定義は必須
 export interface Product {
   id: number
   product_name: string

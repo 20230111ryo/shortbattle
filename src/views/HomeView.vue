@@ -1,14 +1,12 @@
 <template>
   <div>
     <div class="products">
-      <!-- 最初の5つの商品だけを表示 -->
       <div v-for="product in limitedProducts" :key="product.id" class="product">
         <img :src="product.image" :alt="product.product_name" />
         <h3>{{ product.product_name }}</h3>
         <p>{{ product.description }}</p>
         <p>{{ product.price }}</p>
         <button @click="addToCart(product)">カートへ</button>
-        <!-- 追加されましたメッセージの表示 -->
         <p v-if="addedMessage === product.id">追加されました</p>
       </div>
     </div>
@@ -40,11 +38,7 @@ export default {
     addToCart(product) {
       const cart = useCartStore()
       cart.addToCart(product)
-
-      // 追加されましたメッセージの表示
       this.addedMessage = product.id
-
-      // 数秒後にメッセージを非表示にする
       setTimeout(() => {
         this.addedMessage = null
       }, 1000)

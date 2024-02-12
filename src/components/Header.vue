@@ -16,8 +16,6 @@ export default {
   name: 'Header'
 }
 </script>
-
-<!-- ここにCSSスタイルを追加 -->
 <style scoped>
 nav {
   display: flex;
