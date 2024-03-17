@@ -8,7 +8,7 @@ export const useCartStore = defineStore({
   }),
   actions: {
     addToCart(product: Product) {
-      const existingItem = this.items.find((item) => item.id === product.id)
+      const existingItem = this.items.find((item) => item.product_id === product.product_id)
       if (existingItem) {
         existingItem.quantity++
       } else {
@@ -16,21 +16,21 @@ export const useCartStore = defineStore({
       }
     },
     incrementItemQuantity(product: Product) {
-      const item = this.items.find((item) => item.id === product.id)
+      const item = this.items.find((item) => item.product_id === product.product_id)
       if (item) {
         item.quantity++
       }
     },
     decrementItemQuantity(product: Product) {
-      const item = this.items.find((item) => item.id === product.id)
+      const item = this.items.find((item) => item.product_id === product.product_id)
       if (item && item.quantity > 0) {
         item.quantity--
       } else {
-        this.items = this.items.filter((item) => item.id !== product.id)
+        this.items = this.items.filter((item) => item.product_id !== product.product_id)
       }
     },
     removeItem(product: Product) {
-      this.items = this.items.filter((item) => item.id !== product.id)
+      this.items = this.items.filter((item) => item.product_id !== product.product_id)
     }
   }
 })

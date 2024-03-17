@@ -7,6 +7,12 @@
       <router-link to="/">
         <p>ホーム</p>
       </router-link>
+      <router-link to="/login">
+        <p>ログイン</p>
+      </router-link>
+      <router-link to="/favorite">
+        <p>お気に入り</p>
+      </router-link>
     </nav>
   </header>
 </template>
